@@ -1,4 +1,3 @@
-console.log('*****************************************************************************************');
 const process = require('process');
 const os = require('os');
 

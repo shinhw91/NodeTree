@@ -19,10 +19,13 @@ console.log(points);
 
 points.sort(function(a, b) {
     // 오름차순
-    return a - b;
+    //return a - b;
+    // 내림차순
+    return b - a;
 })
+console.log(points);
 
-// filter : 기존 배열 -> (기준) -> 새로운 배열
+// filter : 기존 배열 -> (기준) -> 새로운 배열(참조값)
 let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 let result = words.filter((value, idx) => {
     // return 데이터 타입 boolean
@@ -65,7 +68,7 @@ let newArray = userList.map(function(obj) {
 })
 
 console.log(userList, newArray);
-console.clear();
+// console.clear();
 newList = userList.map((obj) => {
     return {
         id : obj.id,

@@ -16,10 +16,10 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
-// js/promise.html 파일과 함께 확인하기!
 // 코드 마지막에 위치
-// module.exports = {
-export default {
+// module/module.js, js/promise.html 파일과 함께 확인하기!
+module.exports = {
+// export default {
     defNum : defaultNum,
     add,    // add : add
     minus,  // "minus" : minus 

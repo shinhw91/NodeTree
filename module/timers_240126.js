@@ -42,7 +42,7 @@ const timeout = setTimeout(() => {
     console.log(getDateTime());
 }, 3000);
 
-// clearTimeout(timeout);
+clearTimeout(timeout);
 
 let count = 0;
 const interval = setInterval(() => {

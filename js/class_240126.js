@@ -3,8 +3,8 @@
 
 // var Person = (function() {
 
+//     // 객체가 가질 필드
 //     function Person(name) {
-//         // 객체가 가질 필드
 //         this._name = name;  // underbar(_) : 직접 접근 제한 표시
 //     }
     

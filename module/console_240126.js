@@ -10,3 +10,4 @@ const msg = 'Log Writing';
 
 logger.log('Result : %s', msg);   // stdout
 logger.error(`Result : ${msg}`); // stderr
+// *실행 시 error 내용 없음

@@ -28,7 +28,7 @@ msg = (x, y) => {
     console.log(result);
 }
 
-console.clear();
+// console.clear();
 // 화살표 함수와 this의 연관성
 // 화살표 함수 사용 제한(this) : addEventListener, forEach
 let array = [1, 3, 5, 7];

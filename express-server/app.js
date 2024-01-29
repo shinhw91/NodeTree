@@ -20,6 +20,7 @@ app.use(function(err, req, res, next) {
                         errMessage : err.mesage});
 });
 
+// *라우트 핸들러(교재 p.120)
 app.get('/defaultErr', (req, res) => {
     throw new Error('기본 핸들러 동작!');
 })
@@ -31,14 +32,14 @@ app.get('/customErr', (req, res, next) => {
 // static
 app.use(express.static('./files'));
 app.use('/public', express.static('./files'));
-
+// ===============================================================
 // Data Loding
 const jsonFile = fs.readFileSync('./db.json');
 const jsonData = JSON.parse(jsonFile);
 
-// *ID 확인
+// *DB 접속 쿼리문(ID 확인)
 const getData = (target, where) => {
-    let data = jsonData[target];
+    let data = jsonData[target];    // 객체[필드]
     if(Array.isArray(data)) {
         let list = data;
         for(let obj of list) {
@@ -50,10 +51,13 @@ const getData = (target, where) => {
     return data;
 }
 
+// 교재 p.116
+// 서버 실행
 app.listen(5000, () => {
     console.log('http://localhost:5000');
 })
 
+// GET
 app.get('/', (req, res) => {
     res.send('Hello, Express.js World');
 })

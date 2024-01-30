@@ -37,7 +37,8 @@ app.post('/message', (req, res) => {
 app.listen(5000, () => {
     console.log('Server Start');
 });
-
+// ================================================================================
+// session
 let sessionSetting = session({
     secret : 'Have$A!@Nice_day', // 하드코딩(X)
     resave : false,

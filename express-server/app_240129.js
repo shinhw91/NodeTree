@@ -1,6 +1,6 @@
 const fs = require('fs');
 const express = require('express');
-const userRouter = require('./user.js');    // 모듈이 아닌 파일 경로
+const userRouter = require('./user_240130.js');    // 라우트 추가(파일 경로)
 const app = express();
 
 // 미들웨어
@@ -15,6 +15,7 @@ app.use(express.json({
 app.use(express.urlencoded({extended : false}))
 
 // Error
+// *에러 처리 미들웨어 함수
 app.use(function(err, req, res, next) {
     console.log(err);
     res.status(500).json({statusCode : res.statusCode,
@@ -22,18 +23,20 @@ app.use(function(err, req, res, next) {
 });
 
 // *라우트 핸들러(교재 p.120)
+// *(1) 기본 에러
 app.get('/defaultErr', (req, res) => {
     throw new Error('기본 핸들러 동작!');
 })
 
+// *(2) 에러 발생 -> 에러 처리 미들웨어 함수
 app.get('/customErr', (req, res, next) => {
     next(new Error('Process Fail! Check Data!'));
 })
 
-// static
+// static(정적 파일)
 app.use(express.static('./files'));
 app.use('/public', express.static('./files'));
-// ===============================================================
+
 // Data Loding
 const jsonFile = fs.readFileSync('./db.json');
 const jsonData = JSON.parse(jsonFile);
@@ -52,6 +55,7 @@ const getData = (target, where) => {
     return data;
 }
 
+// *express.Router(교재 p.123)
 // *express-server/user.js 파일과 함께 확인하기!
 app.use('/user', userRouter);
 

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const express = require('express');
+const userRouter = require('./user.js');    // 모듈이 아닌 파일 경로
 const app = express();
 
 // 미들웨어
@@ -50,6 +51,9 @@ const getData = (target, where) => {
     }
     return data;
 }
+
+// *express-server/user.js 파일과 함께 확인하기!
+app.use('/user', userRouter);
 
 // 교재 p.116
 // 서버 실행
@@ -118,6 +122,7 @@ app.delete('/posts/:id', (req, res) => {
 })
 
 // 검색을 포함하는 경우 -> QueryString
+// list[0].id=100&list[0].name=Hong&
 app.get('/search', (req, res) => {
     let keywords = req.query;
     console.log('검색조건 구성', keywords);

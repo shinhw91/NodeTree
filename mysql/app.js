@@ -93,4 +93,9 @@ function getInfo(obj) {
     return newAry;  // ["hkhong@email.com", "010-1234-1234", null]
 }
 
-// 삭제 : 단건조회 수정하여 생성 가능
+// *삭제(단건조회 참고)
+app.delete('/customers/:id', async(req, res) => {
+    let customerId = req.params.id;
+    let del = await mysql.executeQuery('customerDelete', customerId);
+    res.json(del);
+})

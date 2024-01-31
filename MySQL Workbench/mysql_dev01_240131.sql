@@ -19,3 +19,5 @@ CREATE TABLE `t_users`(
     `join_date` DATE,
     PRIMARY KEY(`user_no`)
 );
+
+COMMIT;

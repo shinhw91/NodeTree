@@ -21,3 +21,9 @@ CREATE TABLE `t_users`(
 );
 
 COMMIT;
+
+SELECT *
+FROM t_users;
+
+INSERT INTO t_users
+SET user_id = "user01", user_pwd = 1234, user_name = "홍길동";

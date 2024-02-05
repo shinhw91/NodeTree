@@ -11,6 +11,7 @@ const connectionPool = mysql.createPool({
     // password : '1234',
     // database : 'dev',
     // connectionLimit : 10,
+    // dotenv 모듈(db/dbSetting.env)
     host : process.env.MYSQL_HOST,
     port : process.env.MYSQL_PROT,
     user : process.env.MYSQL_USER,

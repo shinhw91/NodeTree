@@ -63,16 +63,6 @@ function selectedInfo(obj) {
     return newObj;
 };
 
-// function selectedInfo(obj) {
-//     let delDate = ["id", "email"];
-//     let newObj = {};
-//     for(let field in obj) {
-//         if(field == "id") continue;
-//         newObj[field] = obj[field];
-//     }
-//     return newObj;
-// };
-
 async function updateInfo(request) {
     let data = [...getInfo(request.body.param), request.params.id]; // 컬럼 : email, phone, address, id
     let result = await mysql.executeQuery('customerUpdateInfo', data);

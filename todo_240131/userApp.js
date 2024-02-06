@@ -32,7 +32,7 @@ app.post('/users', async(req, res) => {
 
 // 수정
 app.put('/users/:id', async(req, res) => {
-    let result = await updateInfo(req);
+    let result = await updateAll(req);
     res.json(result);
 })
 

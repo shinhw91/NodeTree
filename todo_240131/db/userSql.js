@@ -7,6 +7,7 @@ let userList =
         , user_age
         , join_date
 FROM t_users`;
+// DATE_FORMAT(join_date, '%Y-%m-%d') join_date
 
 let userInfo =
 `SELECT user_no
@@ -39,7 +40,7 @@ let userDelete =
 WHERE user_id = ?`;
 
 module.exports = {
-    userList,
+    userList,   // 변수명 == 필드명, 변수가 가지고 있는 값이 필드의 값
     userInfo,
     userInsert,
     userUpdateAll,

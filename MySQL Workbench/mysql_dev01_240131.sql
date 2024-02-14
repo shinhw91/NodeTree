@@ -23,7 +23,7 @@ CREATE TABLE `t_users`(
 COMMIT;
 
 INSERT INTO t_users
-SET user_id = "user01", user_pwd = 1234, user_name = "홍길동";
+SET user_id = "user02", user_pwd = 1234, user_name = "홍길동";
 
 SELECT *
 FROM t_users;
